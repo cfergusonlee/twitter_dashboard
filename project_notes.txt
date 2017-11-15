@@ -1,0 +1,15 @@
+Goal: Twitter Dashboard that shows trends on whatever topic you enter. It will show a time series plot, location choropleth and sentiment analysis possibly broken down by demographic bar chart.
+
+Need:
+1. Twitter API
+ 1. Port auth keys, etc to json
+2. plotly dashboard
+3. Plotly plots
+ 1. Choropleth (USA)
+ 2. Time series line graph (number of mentions)
+ 3. Sentiment analysis (bar chart)
+4. User search term to query twitter api
+5. Simple instructions
+
+Looks like twitter stores a descent amount of data in their API. You can grab the location, time, and more, but only in a 7-day window.
+- Only gives data from past 20-30 minutes. Created a script that runs every hour. Will let run for a week.
