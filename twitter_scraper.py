@@ -33,10 +33,13 @@ import os
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "data/My First Project-f196f491b645.json"
 
 def get_tweets():
-    CONSUMER_KEY = '3G1gJIknmrZZeivuYl9uiZ8ad'
-    CONSUMER_SECRET = 'yYlLwjtDFsKuZT7K9OxhI4oAhiHIGlS1Q3lqBO6IUaMT87iHyJ'
-    ACCESS_TOKEN = '929465789199081473-pK6iJuzsvQLiFN4GogUHHCT4NJLTkQ0'
-    ACCESS_TOKEN_SECRET = 'rqp03Yb8ZtrZO2tDhKWbS2Ai8iOwbt1OFuBmCviSX1aKN'
+    
+    twitter_auth = json.load(open('data/twitter_auth.json', 'r'))
+        
+    CONSUMER_KEY = twitter_auth['consumer_key']
+    CONSUMER_SECRET = twitter_auth['consumer_secret']
+    ACCESS_TOKEN = twitter_auth['access_token']
+    ACCESS_TOKEN_SECRET = twitter_auth['access_token_secret']
 
     auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
     auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
